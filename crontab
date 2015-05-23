@@ -1,1 +1,1 @@
-0 12 * * * ruby /path/to/dosign.rb
+0 12 * * * ruby /path/to/dosign.rb >> /path/to/log.txt

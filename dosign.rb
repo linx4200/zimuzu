@@ -26,18 +26,11 @@ class Dosign
 
     time = Time.new.strftime("%Y-%m-%d %H:%M:%S")
 
-    # 定时任务输出结果
-    log_file = File.open 'log.txt', 'a'
-
     if JSON.parse(resp.body)['status'] == 1
-      log_file.puts time.to_s + ' 签到成功!'
-      puts '签到成功'
+      puts time.to_s + ' 签到成功!'
     else
-      log_file.puts time.to_s + ' 签到失败'
-      puts '签到失败'
+      puts time.to_s + ' 签到失败'
     end
-
-    log_file.close
   end
 
   def main
