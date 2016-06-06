@@ -26,6 +26,7 @@ class Dosign
 
     time = Time.new.strftime("%Y-%m-%d %H:%M:%S")
 
+    body = JSON.parse(resp.body)
     if JSON.parse(resp.body)['status'] == 1
       puts time.to_s + ' 签到成功!'
     else
@@ -37,7 +38,8 @@ class Dosign
     # 先登录获取cookie, 同一个@agent 可以共享 cookie
     login
     # 再签到
-    dosign
+    # 原有的签到方式改为累计登录天数,已签到的天数会自动转化为累计登录天数,每天通过浏览器或APP登录网站计为一个登录天数。
+    # dosign
   end
 end
 
